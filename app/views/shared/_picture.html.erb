@@ -1,0 +1,17 @@
+<%= "No pictures to show :( " if @pictures.empty? %>
+
+<div class="col-md-4">
+  <div class="card mb-4 shadow-sm">
+    <%= link_to([@gallery, picture], remote: true ) do %>
+      <%= image_tag picture.image, class: 'card-img rounded mx-auto d-block' %>
+    <% end %>
+    <div class="card-body">
+      <p class="card-text"><%= picture.name %></p>
+      <div class="d-flex justify-content-between align-items-center">
+        <%= btn_group [@gallery, picture], edit_gallery_picture_path(@gallery, picture), gallery_picture_path(@gallery, picture) %>
+        <small class="text-muted"><%= distance_of_time_in_words(Time.now, picture.created_at, include_seconds: true) %></small>
+      </div>
+    </div>
+  </div>
+</div>
+

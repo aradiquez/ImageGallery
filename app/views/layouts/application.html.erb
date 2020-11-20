@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="h-100">
+  <head>
+    <title>ImageGallery</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <main role="main" class="flex-shrink-0">
+      <%= notice_tag notice %>
+      <%= yield :jumbotron %>
+
+      <div class="py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <p>Powered by RubyBootcamp@2020.</p>
+      </div>
+    </footer>
+  </body>
+</html>

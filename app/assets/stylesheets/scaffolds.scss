@@ -1,0 +1,61 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.sidebar {
+  margin-left: 0;
+  min-height: 95vh;
+  @extend .bg-dark;
+}
+
+.sidebar .jumbotron {
+  width: 20rem;
+  background-color: transparent;
+  color: white;
+}
+
+.page-content {
+  width: 100%;
+  @extend .bg-light;
+}
+
+.field_with_errors {
+  @extend .text-danger;
+}
+
+.field_with_errors input {
+  @extend .border;
+  @extend .border-danger;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.modal-body img {
+  display: block;
+  margin: 0 auto;
+}
+
+.container {
+  width: auto;
+  padding: 0 15px;
+}
+
+.footer {
+  @extend .bg-primary;
+  @extend .text-white;
+}
+
+.flex-column .footer {
+  @extend .bg-secondary;
+}

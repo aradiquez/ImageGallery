@@ -1,0 +1,27 @@
+<% content_for :jumbotron do %>
+  <%= render partial: 'shared/jumbotron', locals: {
+    titles: {
+      title: 'Galleries'
+    },
+    add_link_name: 'Add New Gallery',
+    add_link_path: new_gallery_path
+  } %>
+<% end %>
+
+<% @galleries.each do |gallery| %>
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <%= link_to gallery do %>
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: <%= gallery.name %>"><title><%= gallery.name %></title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"><%= gallery.name %></text></svg>
+      <% end %>
+      <div class="card-body">
+        <p class="card-text">Author: <%= gallery.author %></p>
+        <div class="d-flex justify-content-between align-items-center">
+          <%= btn_group gallery, edit_gallery_path(gallery), gallery %>
+          <small class="text-muted"><%= distance_of_time_in_words(Time.now, gallery.created_at, include_seconds: true) %></small>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

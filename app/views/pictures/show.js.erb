@@ -1,0 +1,5 @@
+// Show the dynamic dialog
+$('#imageModalLabel').html("<%= @picture.name %>");
+// Render the new form
+$('.modal-body').html("<%= escape_javascript image_tag @picture.image, class: 'modal_image' %>");
+$('#imageModal').modal('show');

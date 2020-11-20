@@ -1,0 +1,12 @@
+<div class="col">
+  <h1><%= @picture.name %><small> - <%= @picture.gallery.name %></small></h1>
+  <br />
+  <p>
+    <%= image_tag @picture.image, class: 'show_image' %>
+  </p>
+  <br />
+  <%= link_to 'Edit', edit_gallery_picture_path(@gallery), class: "btn btn-primary my-2" %>
+  <br />
+  <br />
+  <%= link_to 'Back', gallery_pictures_path %>
+</div>
