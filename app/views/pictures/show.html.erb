@@ -1,9 +1,7 @@
 <div class="col">
   <h1><%= @picture.name %><small> - <%= @picture.gallery.name %></small></h1>
   <br />
-  <p>
-    <%= image_tag @picture.image, class: 'show_image' %>
-  </p>
+  <%= image_detail_modal_link(@picture) %>
   <br />
   <%= link_to 'Edit', edit_gallery_picture_path(@gallery), class: "btn btn-primary my-2" %>
   <br />

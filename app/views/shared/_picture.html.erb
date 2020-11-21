@@ -2,9 +2,7 @@
 
 <div class="col-md-4">
   <div class="card mb-4 shadow-sm">
-    <%= link_to([@gallery, picture], remote: true ) do %>
-      <%= image_tag picture.image, class: 'card-img rounded mx-auto d-block' %>
-    <% end %>
+    <%= image_detail_modal_link(picture) %>
     <div class="card-body">
       <p class="card-text"><%= picture.name %></p>
       <div class="d-flex justify-content-between align-items-center">

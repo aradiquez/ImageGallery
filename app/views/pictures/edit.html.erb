@@ -1,11 +1,7 @@
 <div class="col">
   <h1>Editing Picture</h1>
 
-  <p>
-    <%= link_to [@gallery, @picture], remote: true do %>
-      <%= image_tag @picture.image, class: 'edit_form_image' %>
-    <% end %>
-  </p>
+  <%= image_detail_modal_link(@picture) %>
 
   <%= render 'form', picture: @picture %>
 
@@ -15,5 +11,3 @@
   <%= link_to 'Back', gallery_pictures_path %>
 
 </div>
-
-<%= render partial: 'shared/modal' %>
